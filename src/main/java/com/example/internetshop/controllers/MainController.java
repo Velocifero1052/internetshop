@@ -66,7 +66,7 @@ public class MainController {
 
     @RequestMapping("/registerSuccessful")
     public String viewRegisterSuccessful(Model model) {
-        model.addAttribute("flashUser",)
+
         return "registerSuccessfulPage";
     }
 
