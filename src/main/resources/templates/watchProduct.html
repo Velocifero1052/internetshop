@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h1> <a href="/" style="text-decoration: none; text-color:black">internet shop</a></h1>
+</header>
+<section>
+    <h3 th:text="${product.getName()}"></h3>
+    <p th:text="${product.getDescription()}"></p>
+    <p th:text="'price: $' + ${product.getPrice()}"></p>
+    <p th:text="'category: ' + ${product.getCategory()}"></p>
+</section>
+    <a th:href="'/order_product?pr_id=' + ${product.getId()}">order this product</a>
+</body>
+</html>
