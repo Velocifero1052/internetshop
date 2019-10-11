@@ -49,7 +49,7 @@ public class Product {
         return category;
     }
     public String toString(){
-        return String.format("product{name : %s, price: %d, category: %s}\n", name, price, category.getName());
+        return String.format("product{name : %s, price: %d, category: %s}", name, price, category.getName());
     }
 
     public void setCategory(Category category) {
