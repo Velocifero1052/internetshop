@@ -3,29 +3,41 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Taco Cloud</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
+<th:block th:include="style"></th:block>
 <body>
-<h1>Register</h1>
+<th:block th:include="headerBlock"></th:block>
 <form action="#" method="POST" th:action="@{/register}" th:object="${registerForm}">
-    <label>Username: </label>
-    <input type="text" th:field="*{username}"/><br/>
-    <label>Password: </label>
-    <input type="password" th:field="*{password}"/><br/>
-    <label >Confirm password: </label>
-    <input type="password" name="confirm"/><br/>
-    <label>Full name: </label>
-    <input type="text" th:field="*{fullname}"/><br/>
-    <label >Street: </label>
-    <input type="text" th:field="*{street}"/><br/>
-    <label> City: </label>
-    <input type="text" th:field="*{city}"/><br/>
-    <label>State: </label>
-    <input type="text" th:field="*{state}"/><br/>
-    <label>Zip: </label>
-    <input type="text" th:field="*{zip}"/><br/>
-    <label>Phone: </label>
-    <input type="text" th:field="*{phone}"/><br/>
-    <input type="submit" value="Register"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8"><div class="form-group">
+                <label>Username: </label>
+                <input type="text" class="form-control" th:field="*{username}"/><br/>
+                <label>Password: </label>
+                <input type="password"  class="form-control" th:field="*{password}"/><br/>
+                <label >Confirm password: </label>
+                <input type="password"  class="form-control" name="confirm"/><br/>
+                <label>Full name: </label>
+                <input type="text"  class="form-control" th:field="*{fullname}"/><br/>
+                <label >Street: </label>
+                <input type="text"  class="form-control" th:field="*{street}"/><br/>
+                <label> City: </label>
+                <input type="text"  class="form-control" th:field="*{city}"/><br/>
+                <label>State: </label>
+                <input type="text"  class="form-control" th:field="*{state}"/><br/>
+                <label>Zip: </label>
+                <input type="text"  class="form-control" th:field="*{zip}"/><br/>
+                <label>Phone: </label>
+                <input type="text"  class="form-control" th:field="*{phone}"/><br/>
+                <input type="submit" class="btn btn-success" value="Register"/>
+            </div></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
 </form>
 </body>
 </html>

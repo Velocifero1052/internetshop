@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
+<th:block th:include="style"></th:block>
 <body>
-<header>
-    <h1> <a href="/" style="text-decoration: none; text-color:black">internet shop</a></h1>
-</header>
-<section>
-    <h3 th:text="${product.getName()}"></h3>
-    <p th:text="${product.getDescription()}"></p>
-    <p th:text="'price: $' + ${product.getPrice()}"></p>
-    <p th:text="'category: ' + ${product.getCategory()}"></p>
-</section>
-    <form action="#"  th:action="@{/order_product}" th:object="${orderForm}" method="post">
-        <p>name: <input type="text" th:field="*{name}"></p>
-        <p>country: <input type="text" th:field="*{country}"></p>
-        <p>address: <input type="text" th:field="*{address}"></p>
-        <p>phone: <input type="text" th:field="*{phone}"></p>
-        <p>credit card number: <input type="text" th:field="*{creditCard}"></p>
-        <p>credit card expiration date: <input type="text" th:field="*{ccExpiration}"></p>
-        <p>CVV: <input type="text" th:field="*{ccCVV}"></p>
-        <p><input type="submit" value="Submit" />
-    </form>
+<th:block th:include="headerBlock"></th:block>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+              <h3 th:text="${product.getName()}"></h3>
+              <p th:text="${product.getDescription()}"></p>
+              <p th:text="'price: $' + ${product.getPrice()}"></p>
+              <p th:text="'category: ' + ${product.getCategory()}"></p>
+
+              <form action="#"  th:action="@{/order_product}" th:object="${orderForm}" method="post">
+                  <p>name: <input class="form-control" type="text" th:field="*{name}"></p>
+                  <p>country: <input type="text"  class="form-control" th:field="*{country}"></p>
+                  <p>address: <input type="text" class="form-control" th:field="*{address}"></p>
+                  <p>phone: <input type="text" class="form-control" th:field="*{phone}"></p>
+                  <p>credit card number: <input type="text" class="form-control" th:field="*{creditCard}"></p>
+                  <p>credit card expiration date: <input type="text" class="form-control" th:field="*{ccExpiration}"></p>
+                  <p>CVV: <input type="password" class="form-control" th:field="*{ccCVV}"></p>
+                  <p><input type="submit" class="btn btn-primary" value="Submit" />
+              </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

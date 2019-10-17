@@ -1,0 +1,12 @@
+header{
+    display:flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: stretch;
+    background: #424242;
+    align-content: baseline;
+    vertical-align: center;
+    flex-flow:row;
+    margin-bottom:50px;
+    padding-top: 25px;
+}

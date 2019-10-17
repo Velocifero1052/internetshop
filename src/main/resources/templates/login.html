@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Taco Cloud</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
+<th:block th:include="style"></th:block>
 <body>
-<h1>Login</h1>
-<p>New here? Click
-    <a th:href="@{/register}">here</a> to register.</p>
+<th:block th:include="headerBlock"></th:block>
+
+
 <!-- tag::thAction[] -->
-<form method="POST" th:action="@{/login}" th:object="${loginForm}">
-    <!-- end::thAction[] -->
-    <label>Username: </label>
-    <input type="text" name="username" th:field="*{username}"/><br/>
-    <label >Password: </label>
-    <input type="password" name="password" th:field="*{password}" /><br/>
-    <input type="submit" value="Login"/>
-</form>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                <p>New here? Click <a th:href="@{/register}">here</a> to register.</p>
+                <form method="POST" th:action="@{/login}" th:object="${loginForm}">
+                <!-- end::thAction[] -->
+                    <div class="form-group">
+                        <label>Username: </label>
+                        <input  class="form-control" type="text" name="username" th:field="*{username}"/><br/>
+                        <label>Password: </label>
+                        <input type="password" class="form-control" name="password" th:field="*{password}" /><br/>
+                        <input type="submit" value="Login"/>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
 </body>
 </html>

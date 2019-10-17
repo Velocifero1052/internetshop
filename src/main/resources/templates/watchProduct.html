@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
+<th:block th:include="style"></th:block>
 <body>
-<header>
-    <h1> <a href="/" style="text-decoration: none; text-color:black">internet shop</a></h1>
-</header>
-<section>
-    <h3 th:text="${product.getName()}"></h3>
-    <p th:text="${product.getDescription()}"></p>
-    <p th:text="'price: $' + ${product.getPrice()}"></p>
-    <p th:text="'category: ' + ${product.getCategory()}"></p>
-</section>
-    <a th:href="'/order_product?pr_id=' + ${product.getId()}">order this product</a>
+<th:block th:include="headerBlock"></th:block>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h3 th:text="${product.getName()}"></h3>
+            <p th:text="${product.getDescription()}"></p>
+            <p th:text="'price: $' + ${product.getPrice()}"></p>
+            <p th:text="'category: ' + ${product.getCategory()}"></p>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2">
+            <a th:href="'/order_product?pr_id=' + ${product.getId()}"  class="btn btn-primary">order this product</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

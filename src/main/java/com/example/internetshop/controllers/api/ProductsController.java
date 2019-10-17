@@ -1,4 +1,4 @@
-package com.example.internetshop.controllers;
+package com.example.internetshop.controllers.api;
 
 import com.example.internetshop.entities.Detail;
 import com.example.internetshop.entities.Product;
